@@ -2,6 +2,8 @@
 
 A simple parking map to show potential parking lots around the Charlotte Cardinal Solutions office in Uptown.
 
+**Current URL**: https://cardinal-solutions.github.io/cardinal-clt-parking-map/
+
 ## Contributing
 
 To modify the pins, please fork this repo and then make your changes to the `lots` Array in `assets/scripts/index.js` and then submit a Pull Request to this repository.
