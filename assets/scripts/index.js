@@ -73,14 +73,18 @@
     map = new google.maps.Map(mapElement, mapOptions);
 
     [].concat(office, lots).forEach(function(item) {
+      var markerCenter = new google.maps.LatLng(item.lat, item.lng);
+
       var newMapMarker = new google.maps.Marker({
-        position: new google.maps.LatLng(item.lat, item.lng),
+        position: markerCenter,
         map: map,
         title: item.name,
         icon: (item.icon) ? item.icon : ''
       });
 
       newMapMarker.addListener('click', function() {
+        map.setCenter(offsetCenter(markerCenter, 0, -80));
+
         var content = '<h3>' + item.name + '</h3>';
 
         if(item.info) {
@@ -92,6 +96,33 @@
         infoWindow.open(map, newMapMarker);
       })
     });
+  }
+
+  //borrowed from:  http://stackoverflow.com/a/10666030
+  function offsetCenter(latlng,offsetx,offsety) {
+    // latlng is the apparent centre-point
+    // offsetx is the distance you want that point to move to the right, in pixels
+    // offsety is the distance you want that point to move upwards, in pixels
+    // offset can be negative
+    // offsetx and offsety are both optional
+
+    var scale = Math.pow(2, map.getZoom());
+    var nw = new google.maps.LatLng(
+        map.getBounds().getNorthEast().lat(),
+        map.getBounds().getSouthWest().lng()
+    );
+
+    var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
+    var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0)
+
+    var worldCoordinateNewCenter = new google.maps.Point(
+        worldCoordinateCenter.x - pixelOffset.x,
+        worldCoordinateCenter.y + pixelOffset.y
+    );
+
+    var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+
+    map.setCenter(newCenter);
   }
 
 }());
