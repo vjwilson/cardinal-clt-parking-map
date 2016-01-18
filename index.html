@@ -6,11 +6,21 @@
     <title>Charlotte Parking Map | Cardinal Solutions</title>
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7WL1G90CJnE60BGE2MH7US6tDR__4nGY"></script>
+    <script>
+     (function(d) {
+       var config = {
+         kitId: 'gtu2cnr',
+         scriptTimeout: 3000,
+         async: true
+       },
+       h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+     })(document);
+    </script>
   </head>
   <body>
     <header class="header">
-      <h1>Charlotte Cardinal Office Parking Map</h1>
-      <p>Please note that daily expense limit is $8 a day or $40 a week. Parking rates change frequently in Uptown, so this map may not be up to date.</p>
+      <h1 class="tk-effra">Charlotte Cardinal Office Parking Map</h1>
+      <p class="tk-effra">Please note that daily expense limit is $8 a day or $40 a week. Parking rates change frequently in Uptown, so this map may not be up to date.</p>
     </header>
     <main class="main">
       <div id="map"></div>

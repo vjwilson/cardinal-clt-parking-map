@@ -32,6 +32,15 @@
       lng: -80.845199,
       name: 'Graham St & 6th St',
       info: '<ul><li><strong>Daily</strong>: $5.00</li><li><strong>Monthly</strong>: $79.00</li></ul>'
+    },
+    {
+      lat: 35.230140,
+      lng: -80.848257,
+      name: 'Graham St & 4th St',
+      info: '<ul>' +
+        '<li><strong>Daily</strong>: $6.00</li>' +
+        '</ul>' +
+        '<p><strong>Note</strong>: <em>Cash only unless using <a href="http://us.parkmobile.com/mobile-apps" target="_blank">ParkMobile App</a></em>.</p>'
     }
   ];
 
