@@ -1,0 +1,26 @@
+body {
+  font-family: effra;
+  font-size: 14pt;
+}
+
+h1 {
+  font-family: effra;
+  font-size: 36pt;
+  color: #192a53;
+}
+
+// Set a size for our map container, the Google Map will take up 100% of this container */
+#map {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+}
+
+#map > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
