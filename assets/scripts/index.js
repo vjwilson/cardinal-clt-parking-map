@@ -6,6 +6,8 @@
 
   var cardinalLogo = './assets/images/cardinal-logo.svg';
 
+  var cardinalAddress = document.getElementById('cardinal-address');
+
   var office = {
     lat: 35.227156,
     lng: -80.846351,
@@ -48,6 +50,10 @@
   google.maps.event.addDomListener(window, 'load', init);
 
   google.maps.event.addDomListener(window, 'resize', function() {
+    map.setCenter(center);
+  });
+
+  cardinalAddress.addEventListener('click', function() {
     map.setCenter(center);
   });
 

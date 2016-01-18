@@ -20,6 +20,17 @@ body {
   font-size: 14px;
   padding: 0;
   margin: 0 auto;
+  color: #232323;
+}
+
+a {
+  color: #1d64b5;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #263254;
 }
 
 .header {
@@ -85,6 +96,23 @@ body {
   left: 0;
 }
 
+.footer-info-address > address {
+  cursor: pointer;
+}
+
+.footer-info-address > address:after {
+  content: "(re-center)";
+  text-decoration: underline;
+  margin-left: 2px;
+  color: #1d64b5;
+  transition: all 0.3s ease;
+}
+
+.footer-info-address > address:hover:after,
+.footer-info-address > address:focus:after {
+  color: #263254;
+}
+
 .footer-info-phone {
   right: 0;
 }
@@ -94,11 +122,19 @@ body {
     width: 95%;
     margin: 2.5% 2.5% 0;
   }
+
+  .footer-info-address > address:after {
+    content: "(Tap to re-center)";
+  }
 }
 
 @media (min-width: 960px) {
   .header {
     width: 98%;
     margin: 1% 1% 0;
+  }
+
+  .footer-info-address > address:after {
+    content: "(Tap to re-center map)";
   }
 }
