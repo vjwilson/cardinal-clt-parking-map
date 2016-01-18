@@ -2,6 +2,38 @@
 
   var center;
   var map;
+  var geocoder;
+
+  var cardinalLogo = './assets/images/cardinal-logo.svg';
+
+  var office = {
+    lat: 35.227156,
+    lng: -80.846351,
+    icon: cardinalLogo,
+    name: 'Cardinal Solutions Office',
+    info: '<p>Office is located on the 5th floor.</p>'
+  };
+
+  var lots = [
+    {
+      lat: 35.227895,
+      lng: -80.847096,
+      name: 'Parking near Greens Lunch',
+      info: '<ul><li><strong>Daily</strong>: $9.00</li><li><strong>Monthly</strong>: $135.00</li></ul>'
+    },
+    {
+      lat: 35.228253,
+      lng: -80.856591,
+      name: 'Hill Street Parking',
+      info: '<p>Street Parking is free, but fills up early.</p>'
+    },
+    {
+      lat: 35.232059,
+      lng: -80.845199,
+      name: 'Graham St & 6th St',
+      info: '<ul><li><strong>Daily</strong>: $5.00</li><li><strong>Monthly</strong>: $79.00</li></ul>'
+    }
+  ];
 
   // When the window has finished loading create our google map below
   google.maps.event.addDomListener(window, 'load', init);
@@ -26,29 +58,30 @@
     // We are using a div with id="map" seen below in the <body>
     var mapElement = document.getElementById('map');
 
+    var infoWindow = new google.maps.InfoWindow({});
+
     // Create the Google Map using our element and options defined above
     map = new google.maps.Map(mapElement, mapOptions);
 
-    // Let's also add a marker while we're at it
-    var cardinalLogo = './assets/images/cardinal-logo.svg';
+    [].concat(office, lots).forEach(function(item) {
+      var newMapMarker = new google.maps.Marker({
+        position: new google.maps.LatLng(item.lat, item.lng),
+        map: map,
+        title: item.name,
+        icon: (item.icon) ? item.icon : ''
+      });
 
-    var officeMarker = new google.maps.Marker({
-      position: new google.maps.LatLng(35.227156, -80.846351),
-      map: map,
-      icon: cardinalLogo,
-      title: 'Charlotte Cardinal Office - 5th floor'
-    });
+      newMapMarker.addListener('click', function() {
+        var content = '<h3>' + item.name + '</h3>';
 
-    var GreensParkingMarker = new google.maps.Marker({
-      position: new google.maps.LatLng(35.227895, -80.847096),
-      map: map,
-      title: 'Parking near Greens Lunch'
-    });
+        if(item.info) {
+          content += item.info;
+        }
 
-    var HillStMarker = new google.maps.Marker({
-      position: new google.maps.LatLng(35.228253, -80.856591),
-      map: map,
-      title: 'Hill Street Parking'
+        infoWindow.setContent(content);
+
+        infoWindow.open(map, newMapMarker);
+      })
     });
   }
 
