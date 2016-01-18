@@ -1,15 +1,36 @@
+html,
 body {
-  font-family: effra;
-  font-size: 14pt;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
-h1 {
-  font-family: effra;
-  font-size: 36pt;
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header > h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 36px;
   color: #192a53;
 }
 
-// Set a size for our map container, the Google Map will take up 100% of this container */
 #map {
   position: relative;
   padding-bottom: 75%; // This is the aspect ratio

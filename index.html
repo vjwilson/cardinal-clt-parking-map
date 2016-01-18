@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Charlotte Parking Map | Cardinal Solutions</title>
-      <link rel="stylesheet" href="assets/styles/main.css" />
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyC7WL1G90CJnE60BGE2MH7US6tDR__4nGY"></script>
-    </head>
-    <body>
-      <center><h1>Charlotte Cardinal Office Parking Map</h1>
-      <p>Please note that daily expense limit is $8 a day or $40 a week. Parking rates change frequently in Uptown, so this map may not be up to date.</p></center><br />
-
-      <!-- The element that will contain our Google Map. This is used in both the Javascript and CSS above. -->
-      <div id="map"><iframe></iframe></div>
-      <script src="./assets/scripts/index.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlotte Parking Map | Cardinal Solutions</title>
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7WL1G90CJnE60BGE2MH7US6tDR__4nGY"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Charlotte Cardinal Office Parking Map</h1>
+      <p>Please note that daily expense limit is $8 a day or $40 a week. Parking rates change frequently in Uptown, so this map may not be up to date.</p>
+    </header>
+    <main class="main">
+      <div id="map"></div>
+    </main>
+    <script src="./assets/scripts/index.js"></script>
+  </body>
 </html>
