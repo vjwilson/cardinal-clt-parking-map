@@ -1,4 +1,4 @@
-# cardinal-ctl-parking-map
+# cardinal-clt-parking-map
 
 A simple parking map to show potential parking lots around the Charlotte Cardinal Solutions office in Uptown.
 
