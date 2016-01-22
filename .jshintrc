@@ -2,6 +2,7 @@
   "camelcase": true,
   "curly": true,
   "eqeqeq": true,
+  "esnext": true,
   "expr" : true,
   "forin": true,
   "immed": true,
@@ -12,7 +13,7 @@
   "node": false,
   "nonbsp": true,
   "quotmark": "single",
-  "undef": true,
+  "undef": false,
   "unused": "vars",
   "trailing": true,
   "globals": {
